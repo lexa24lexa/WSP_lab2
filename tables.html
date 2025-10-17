@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Tables page</title>
   </head>
 
@@ -14,18 +14,91 @@
         <a class="nav-link" href="text.html">1.Text</a>
         <a class="nav-link" href="graphics.html">2.Graphics</a>
         <a class="nav-link" href="lists.html">3.Lists(bullets)</a>
-        <a class="nav-link" href="tables.html"
-          >4.Tables (with headers, body and footer)</a
-        >
+        <a class="nav-link" href="tables.html">4.Tables (with headers, body and footer)</a>
         <a class="nav-link" href="references.html">5.References (links)</a>
         <a class="nav-link" href="form.html">6.Form</a>
-        <img class="hz" src="stitch.jpeg" alt="stitch picture" height="50" />
+        <img class="hz" src="stitch.jpeg" alt="stitch picture" height="50">
       </nav>
       <h1>Welcome to the Tables page</h1>
     </header>
+
     <main>
-      <section></section>
+      <section>
+        <h2>Standard Table</h2>
+        <p>Text before table.</p>
+        <table border="5">
+          <caption>First table</caption>
+          <thead>
+            <tr>
+              <th>Student</th>
+              <th>Grade</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Kowalski</td>
+              <td>3.0</td>
+            </tr>
+            <tr>
+              <td>Schmidt</td>
+              <td>5.5</td>
+            </tr>
+            <tr>
+              <td>Newman</td>
+              <td>3.5</td>
+            </tr>
+          </tbody>
+          <tfoot>
+            <tr>
+              <th>Avg</th>
+              <td>4.0</td>
+            </tr>
+          </tfoot>
+        </table>
+
+        <h2>Table with Combined Cells</h2>
+        <p>Example with merged rows and columns:</p>
+        <table border="5">
+          <caption>Second table with colspan and rowspan</caption>
+          <thead>
+            <tr>
+              <th>Student</th>
+              <th>Subject</th>
+              <th>Grade</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td rowspan="2">Kowalski</td>
+              <td>Math</td>
+              <td>3.0</td>
+            </tr>
+            <tr>
+              <td>Physics</td>
+              <td>4.0</td>
+            </tr>
+            <tr>
+              <td>Schmidt</td>
+              <td colspan="2">Excellent in all subjects</td>
+            </tr>
+            <tr>
+              <td>Newman</td>
+              <td>Chemistry</td>
+              <td>3.5</td>
+            </tr>
+          </tbody>
+          <tfoot>
+            <tr>
+              <th colspan="2">Average</th>
+              <td>3.6</td>
+            </tr>
+          </tfoot>
+        </table>
+
+        <p>Text after tables.</p>
+      </section>
     </main>
+
     <footer>
       <p>&copy; 2025 Alexandra Smirnova</p>
     </footer>

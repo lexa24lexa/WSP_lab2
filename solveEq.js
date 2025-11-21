@@ -18,7 +18,6 @@ function solveEq(a, b, c) {
     } else {
         // Quadratic equation: ax^2 + bx + c = 0
         if (a === 0) {
-            // Becomes linear
             if (b === 0) {
                 console.log(
                     c === 0
@@ -47,9 +46,11 @@ function solveEq(a, b, c) {
     }
 }
 
-solveEq(2, 4);
-solveEq(1, -3, 2);
-solveEq(1, 2, 1);
-solveEq(0, 0, 5);
-solveEq(0, 0, 0);
-solveEq(0, 5, 10);
+function solveAndShow() {
+  const a = parseFloat(document.getElementById("a").value);
+  const b = parseFloat(document.getElementById("b").value);
+  const cVal = document.getElementById("c").value;
+  const c = cVal === "" ? undefined : parseFloat(cVal);
+  const result = solveEq(a, b, c);
+  document.getElementById("output").textContent = result;
+}

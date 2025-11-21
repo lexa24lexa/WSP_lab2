@@ -1,43 +1,33 @@
-// JavaScript basics part 1 ex 3
-
-/*jslint browser */
-/*global document */
-
 function Movie(title, director, duration, releaseDate) {
-    this.title = title;
-    this.director = director;
-    this.duration = duration;
-    this.releaseDate = releaseDate;
+  this.title = title;
+  this.director = director;
+  this.duration = duration;
+  this.releaseDate = releaseDate;
 }
 
-var movieArr = [
-    new Movie("Inception", "Christopher Nolan", 148, "2010-07-16"),
-    new Movie("The Matrix", "Lana & Lilly Wachowski", 136, "1999-03-31"),
-    new Movie("Parasite", "Bong Joon-ho", 132, "2019-05-30")
+const movieArr = [
+  new Movie("Iron Man", "Jon Favreau", 126, "2008-05-02"),
+  new Movie("The Avengers", "Joss Whedon", 143, "2012-05-04"),
+  new Movie("Black Panther", "Ryan Coogler", 134, "2018-02-16")
 ];
 
-var keys = ["title", "director", "duration", "releaseDate"];
-var i;
-var j;
-var movie;
-
-document.writeln("<table border='1'>");
+document.writeln("<table border='1' style='border-collapse: collapse; text-align: center;'>");
 
 document.writeln("<tr>");
-for (i = 0; i < keys.length; i += 1) {
-    document.write("<th>" + keys[i] + "</th>");
+for (let key in movieArr[0]) {
+  document.write("<th>" + key + "</th>");
 }
 document.writeln("</tr>");
 
-for (i = 0; i < movieArr.length; i += 1) {
-    movie = movieArr[i];
-    document.writeln("<tr>");
-
-    for (j = 0; j < keys.length; j += 1) {
-        document.write("<td>" + movie[keys[j]] + "</td>");
-    }
-
-    document.writeln("</tr>");
+let index = 0;
+for (let movie of movieArr) {
+  let rowColor = index % 2 === 0 ? "lightblue" :"#38e2d1ff";
+  document.write("<tr style='background-color:" + rowColor + "'>");
+  for (let key in movie) {
+    document.write("<td>" + movie[key] + "</td>");
+  }
+  document.writeln("</tr>");
+  index++;
 }
 
 document.writeln("</table>");

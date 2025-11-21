@@ -1,0 +1,263 @@
+<!-- HTML part 2 -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Tables Page - Web Systems Programming</title>
+    <meta
+      name="description"
+      content="Tables page of the Web Systems Programming course website with examples of standard, merged, and nested tables."
+    />
+    <meta
+      name="keywords"
+      content="Web, HTML5, tables, merged cells, nested tables, WSP, Alexandra Smirnova"
+    />
+  </head>
+
+  <body>
+    <header>
+      <nav class="navbar">
+        <a class="nav-link" href="index.html">Main page</a>
+        <a class="nav-link" href="text.html">1. Text</a>
+        <a class="nav-link" href="graphics.html">2. Graphics</a>
+        <a class="nav-link" href="lists.html">3. Lists (bullets)</a>
+        <a class="nav-link" href="tables.html">4. Tables</a>
+        <a class="nav-link" href="references.html">5. References</a>
+        <a class="nav-link" href="form.html">6. Form</a>
+        <img class="hz" src="stitch.jpeg" alt="stitch picture" height="50" />
+      </nav>
+      <h1>Welcome to the Tables Page</h1>
+    </header>
+
+    <main>
+      <article>
+        <h2>Understanding Tables in HTML5</h2>
+
+        <section>
+          <h3>Standard Table</h3>
+          <p>Text before table.</p>
+          <table border="5">
+            <caption>
+              First table
+            </caption>
+            <thead>
+              <tr>
+                <th>Student</th>
+                <th>Grade</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Kowalski</td>
+                <td>3.0</td>
+              </tr>
+              <tr>
+                <td>Schmidt</td>
+                <td>5.5</td>
+              </tr>
+              <tr>
+                <td>Newman</td>
+                <td>3.5</td>
+              </tr>
+            </tbody>
+            <tfoot>
+              <tr>
+                <th>Avg</th>
+                <td>4.0</td>
+              </tr>
+            </tfoot>
+          </table>
+
+          <h3>Table with Combined Cells</h3>
+          <p>Example with merged rows and columns:</p>
+          <table border="5">
+            <caption>
+              Second table with colspan and rowspan
+            </caption>
+            <thead>
+              <tr>
+                <th>Student</th>
+                <th>Subject</th>
+                <th>Grade</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td rowspan="2">Kowalski</td>
+                <td>Math</td>
+                <td>3.0</td>
+              </tr>
+              <tr>
+                <td>Physics</td>
+                <td>4.0</td>
+              </tr>
+              <tr>
+                <td>Schmidt</td>
+                <td colspan="2">Excellent in all subjects</td>
+              </tr>
+              <tr>
+                <td>Newman</td>
+                <td>Chemistry</td>
+                <td>3.5</td>
+              </tr>
+            </tbody>
+            <tfoot>
+              <tr>
+                <th colspan="2">Average</th>
+                <td>3.6</td>
+              </tr>
+            </tfoot>
+          </table>
+
+          <h3>Nested Tables</h3>
+          <table border="5">
+            <tr>
+              <td>
+                <table>
+                  <tr>
+                    <td>a</td>
+                    <td>a</td>
+                  </tr>
+                  <tr>
+                    <td>a</td>
+                    <td>a</td>
+                  </tr>
+                </table>
+              </td>
+              <td>
+                <table>
+                  <tr>
+                    <td>b</td>
+                    <td>b</td>
+                  </tr>
+                  <tr>
+                    <td>b</td>
+                    <td>b</td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <table>
+                  <tr>
+                    <td>c</td>
+                    <td>c</td>
+                  </tr>
+                  <tr>
+                    <td>c</td>
+                    <td>c</td>
+                  </tr>
+                </table>
+              </td>
+              <td>
+                <table>
+                  <tr>
+                    <td>d</td>
+                    <td>d</td>
+                  </tr>
+                  <tr>
+                    <td>d</td>
+                    <td>d</td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+          </table>
+
+          <p>Text after tables.</p>
+
+          <details>
+            <summary>Table Tips</summary>
+            <ul>
+              <li>
+                Use <code>&lt;thead&gt;</code>, <code>&lt;tbody&gt;</code>, and
+                <code>&lt;tfoot&gt;</code> for structure.
+              </li>
+              <li>Colspan and rowspan merge cells.</li>
+              <li>Nested tables can organize complex data.</li>
+            </ul>
+          </details>
+
+          <p>Progress through table examples:</p>
+          <meter value="4" min="0" max="6">Step 4 of 6</meter>
+        </section>
+      </article>
+
+      <!-- JavaScript basics part 1 -->
+      <section class="js-section">
+        <h2>JavaScript Basics</h2>
+        <h3>solveEq()</h3>
+        <p>Enter coefficients to solve linear or quadratic equations:</p>
+
+        <label>a: <input type="number" id="a" value="1" /></label><br />
+        <label>b: <input type="number" id="b" value="-3" /></label><br />
+        <label>c (optional): <input type="number" id="c" /></label><br />
+        <button onclick="solveAndShow()">Solve Equation</button>
+
+        <div class="output" id="output"></div>
+
+        <script>
+          function solveEq(a, b, c) {
+            if (c === undefined || c === null || c === "") {
+              // Linear equation ax + b = 0
+              if (a === 0) {
+                return b === 0 ? "Infinite solutions" : "No solution";
+              } else {
+                return "x = " + -b / a;
+              }
+            } else {
+              // Quadratic equation ax^2 + bx + c = 0
+              if (a === 0) {
+                // Becomes linear
+                if (b === 0) {
+                  return c === 0 ? "Infinite solutions" : "No solution";
+                } else {
+                  return "x = " + -c / b;
+                }
+              } else {
+                const delta = b * b - 4 * a * c;
+                if (delta < 0) {
+                  return "No real solutions";
+                } else if (delta === 0) {
+                  return "One real solution: x = " + -b / (2 * a);
+                } else {
+                  const x1 = (-b + Math.sqrt(delta)) / (2 * a);
+                  const x2 = (-b - Math.sqrt(delta)) / (2 * a);
+                  return "Two real solutions: x1 = " + x1 + ", x2 = " + x2;
+                }
+              }
+            }
+          }
+
+          function solveAndShow() {
+            const a = parseFloat(document.getElementById("a").value);
+            const b = parseFloat(document.getElementById("b").value);
+            const cVal = document.getElementById("c").value;
+            const c = cVal === "" ? undefined : parseFloat(cVal);
+            const result = solveEq(a, b, c);
+            document.getElementById("output").textContent = result;
+          }
+        </script>
+      </section>
+
+      <aside>
+        <h3>Quick Info</h3>
+        <p>
+          This page demonstrates standard, merged, and nested tables in HTML5.
+        </p>
+        <details>
+          <summary>More Info</summary>
+          <p>Proper table structure improves readability and accessibility.</p>
+        </details>
+      </aside>
+    </main>
+
+    <footer>
+      <p>&copy; 2025 Alexandra Smirnova</p>
+      <p>Last updated: <time datetime="2025-11-08">November 8, 2025</time></p>
+    </footer>
+  </body>
+</html>
